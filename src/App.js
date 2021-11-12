@@ -10,7 +10,7 @@ function App() {
     { id: "1", username: "firstuser", age: "30" },
   ]);
 
-  const addUserInput = (event) => {
+  const addUserInputHandler = (event) => {
     event.preventDefault();
     setUserInput((prevUsers) => {
       const updatedUsers = [...prevUsers];
@@ -23,11 +23,21 @@ function App() {
     });
   };
 
+  const deleteUserInputHandler = (event) => {
+    setUserInput((prevUsers) => {
+      const updatedUsers = prevUsers.filter(
+        (user) => user.id !== event.target.id
+      );
+
+      return updatedUsers;
+    });
+  };
+
   return (
     <div className="App">
       <h1>User React List</h1>
-      <UserInput method="POST" addUserInputHandler={addUserInput} />
-      <UserList users={user} />
+      <UserInput method="POST" onAddUserInput={addUserInputHandler} />
+      <UserList users={user} onDeleteUserInput={deleteUserInputHandler} />
     </div>
   );
 }

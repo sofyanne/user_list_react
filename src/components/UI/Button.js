@@ -1,7 +1,11 @@
 import React from "react";
 
 const Button = (props) => {
-  return <button type={props.type}>Add User</button>;
+  return (
+    <button id={props.id} onClick={props.onClick} type={props.type}>
+      {props.label}
+    </button>
+  );
 };
 
 export default Button;

@@ -1,0 +1,13 @@
+.none {
+    display: none;
+}
+
+.block {
+    display: block;
+    position: absolute;
+    top: 0px;
+    text-align: center;
+    width: 500px;
+    height: 500px;
+    background-color: goldenrod;
+}

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 
+import styles from "./UserInput.module.css";
 import Button from "../UI/Button";
 
 const UserInput = (props) => {
@@ -28,8 +29,8 @@ const UserInput = (props) => {
   };
 
   return (
-    <div>
-      <h2>Add a new user</h2>
+    <div className={styles["form-control"]}>
+      <h2 className={styles.h2}>Add a new user</h2>
       <form method={props.method} onSubmit={submitHandler}>
         <div>
           <label htmlFor="username">Username</label>
